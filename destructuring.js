@@ -13,7 +13,11 @@ Rewrite the code below to use array destructuring instead of assigning each valu
   let quantity = item[2];
 
   console.log(`Item: ${name}, Quantity: ${quantity}, Price: ${price}`);
-  console.log();
+  
+
+  // solution
+  let [name2,price2,quantity2] = item;
+  console.log(`Item: ${name2}, Quantity: ${quantity2}, Price: ${price2}`);
 }
 
 /**
@@ -29,7 +33,10 @@ Rewrite the code below to assign each number to the right variable.
   let [one, two, three, four, five, six] = numbers;
 
   console.log(`One: ${one}, Two: ${two}, Three: ${three}, Four: ${four}, Five: ${five}, Six: ${six}`);
-  console.log();
+
+  // solution
+  let [three1,five1,four1,two1,six1,one1] = numbers;
+  console.log(`One: ${one1}, Two: ${two1}, Three: ${three1}, Four: ${four1}, Five: ${five1}, Six: ${six1}`);
 }
 
 /**
@@ -49,7 +56,7 @@ Write the destructuring assignment that reads:
   let user = { name: "John", years: 30 };
 
   // your code to the left side:
-  let {} = user;
+  let {name,years:age,isAdmin=false} = user; // renaming years to age and set default isAdmin
 
   console.log(name); // John
   console.log(age); // 30
@@ -66,10 +73,13 @@ Rewrite the code below to use array destructuring instead of assigning each valu
   console.log("EXERCISE 4");
 
   let person = [12, "Chris", "Owen"];
+  // before solution
+//   let firstName = person[1];
+//   let lastName = person[2];
+//   let age = person[0];
 
-  let firstName = person[1];
-  let lastName = person[2];
-  let age = person[0];
+  // solution
+  let [age, firstName, lastName] = person;
 
   console.log(`Person - Age: ${age}, Name: ${firstName} ${lastName}`);
   console.log();
@@ -87,10 +97,11 @@ Hint: https://untangled.io/in-depth-es6-destructuring-with-assembled-avengers
   console.log("EXERCISE 5");
 
   let person = ["Chris", 12, "Owen"];
-
-  let firstName = person[0];
-  let lastName = person[2];
-
+  // before solution
+  //let firstName = person[0];
+  //let lastName = person[2];
+  // solution
+  let [firstName,, lastName] = person;
   console.log(`Name: ${firstName} ${lastName}`);
   console.log();
 }
@@ -108,7 +119,7 @@ Hint: https://untangled.io/in-depth-es6-destructuring-with-assembled-avengers
   const students = ['Christina', 'Jon', 'Alexandare'];
 
   // Write your code here
-  const [] = students;
+  const [,,lastName] = students;
 
   console.log(lastName);
   console.log();
@@ -131,7 +142,7 @@ Hint: https://untangled.io/in-depth-es6-destructuring-with-assembled-avengers
   ];
 
   // Write your code here
-  const [] = moreStudents;
+  const [student1, [student2,student3], [student4,student5]] = moreStudents;
 
   console.log(student1, student2, student3, student4, student5);
   console.log();
